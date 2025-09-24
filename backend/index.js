@@ -45,7 +45,7 @@ app.post('/api/playlist', async (req, res) => {
   try {
     
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-    const prompt = `Based on the mood "${mood}", generate a Spotify search query. Provide a JSON object with a "query" property. The query should be a short string of keywords, genres, or artists that would fit this mood. For example, for "upbeat and happy", you could return {"query": "happy pop dance"}.`;
+    const prompt = `Based on the mood "${mood}", generate a Spotify search query. Provide a JSON object with a "query" property.`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
