@@ -5,9 +5,9 @@
 The AI Mood Playlist Generator is a web application that creates Spotify playlists based on a user's mood. Users can describe a mood, a vibe, or a scenario, and the application will use a generative AI to create a playlist of songs that match the description.
 
 ## Screenshots
-![Screenshot](Screenshot 2025-09-24 191811.png)
-![Screenshot](Screenshot 2025-09-24 191855.png)
-![Screenshot](Screenshot 2025-09-24 191903.png)
+![Screenshot](Screenshot2025-09-24191811.png)
+![Screenshot](Screenshot2025-09-24191855.png)
+![Screenshot](Screenshot2025-09-24191903.png)
 
 ## Setup Instructions
 
