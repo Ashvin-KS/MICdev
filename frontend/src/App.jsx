@@ -6,12 +6,10 @@ function App() {
   const [playlist, setPlaylist] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const getPlaylist = async () => {
     setIsLoading(true);
     setError(null);
     setPlaylist(null);
-
     try {
       const response = await fetch('http://localhost:3001/api/playlist', {
         method: 'POST',
@@ -35,8 +33,6 @@ function App() {
       setIsLoading(false);
     }
   };
-
-
   return (
     <div className="App">
       <div className="container">
@@ -51,11 +47,8 @@ function App() {
         <button onClick={getPlaylist} disabled={isLoading}>
           {isLoading ? 'Generating...' : 'Generate Playlist'}
         </button>
-
         {error && <div className="error">Error: {error}</div>}
-
         {isLoading && <div className="loading">Creating your playlist...</div>}
-
         {playlist && (
           <div className="playlist">
             <h2>Your Playlist</h2>
@@ -76,5 +69,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
