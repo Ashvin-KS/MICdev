@@ -51,11 +51,11 @@ app.post('/api/playlist', async (req, res) => {
     }));
     res.json({ playlist: tracks });
   } catch (error) {
-    console.error('Error generating playlist:', error);
-    res.status(500).json({ error: 'Failed to generate playlist. Check server logs.' });
+    console.error('Error ', error);
+    res.status(500).json({ error: 'Failed to generate ' });
   }
 });
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server on ${port}`);
   refreshSpotifyToken();
 });
