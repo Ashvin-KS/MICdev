@@ -4,10 +4,10 @@
 
 The AI Mood Playlist Generator is a web application that creates Spotify playlists based on a user's mood. Users can describe a mood, a vibe, or a scenario, and the application will use a generative AI to create a playlist of songs that match the description.
 
-## Screenshots/Videos
-
-*A short video demonstrating the app's features*
-![image](https://github.com/user-attachments/assets/e570b58f-1f2b-4a15-a751-8e0d91a6410f)
+## Screenshots
+![Screenshot](Screenshot 2025-09-24 191811.png)
+![Screenshot](Screenshot 2025-09-24 191855.png)
+![Screenshot](Screenshot 2025-09-24 191903.png)
 
 ## Setup Instructions
 
@@ -70,8 +70,9 @@ To run this project locally, you will need to have Node.js and npm installed.
 
 ## Features Implemented
 
-*   **Mood-based playlist generation:** Users can input a mood, and gemini will generate a playlist for it.
+*   **Mood-based playlist generation:** Users can input a mood, and the AI will generate a playlist to match.
 *   **Spotify integration:** The generated playlist includes links to the songs on Spotify.
+*   **Responsive design:** The application is designed to work on both desktop and mobile devices.
 
 ## Demo Links
 
