@@ -74,6 +74,3 @@ To run this project locally, you will need to have Node.js and npm installed.
 *   **Spotify integration:** The generated playlist includes links to the songs on Spotify.
 *   **Responsive design:** The application is designed to work on both desktop and mobile devices.
 
-## Demo Links
-
-[Link to live demo]
