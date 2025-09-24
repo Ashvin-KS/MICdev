@@ -41,7 +41,7 @@ function App() {
         <textarea
           value={mood}
           onChange={(e) => setMood(e.target.value)}
-          placeholder="e.g., 'A rainy day, feeling nostalgic and calm'"
+          placeholder="e.g., 'Breakup up like me rn .😥'"
           rows="3"
         />
         <button onClick={getPlaylist} disabled={isLoading}>
