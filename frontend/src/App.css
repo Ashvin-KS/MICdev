@@ -1,0 +1,129 @@
+/* Basic Reset & App Layout */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #1DB954; /* Spotify Green */
+}
+
+.description {
+  color: #b3b3b3;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Area */
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #535353;
+  background-color: #282828;
+  color: #ffffff;
+  resize: vertical;
+  box-sizing: border-box; /* Important for width */
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #1DB954;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1ed760;
+}
+
+button:disabled {
+  background-color: #535353;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.error {
+  color: #ff4d4d;
+  margin-top: 1rem;
+}
+
+.loading {
+  margin-top: 1rem;
+  color: #b3b3b3;
+}
+
+/* Playlist Display */
+.playlist {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.track-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.track {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.track:hover {
+  background-color: #282828;
+}
+
+.track img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.track-info {
+  overflow: hidden;
+}
+
+.track-title {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

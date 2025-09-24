@@ -22,7 +22,8 @@ function App() {
       });
 
       if (!response.ok) {
-        throw new Error('Something went wrong on the server.');
+        const errData = await response.json();
+        throw new Error(errData.error || 'Something went wrong on the server.');
       }
 
       const data = await response.json();
@@ -38,27 +39,40 @@ function App() {
 
   return (
     <div className="App">
-      <h1>AI Mood Playlist Generator</h1>
-      <textarea
-        value={mood}
-        onChange={(e) => setMood(e.target.value)}
-        placeholder="How are you feeling? e.g., 'A rainy day, feeling nostalgic and calm'"
-        rows="4"
-        cols="50"
-      />
-      <br />
-      <button onClick={getPlaylist} disabled={isLoading}>
-        {isLoading ? 'Generating...' : 'Generate Playlist'}
-      </button>
+      <div className="container">
+        <h1>AI Mood Playlist Generator</h1>
+        <p className="description">Describe a mood, a vibe, or a scenario, and let AI curate a playlist for you.</p>
+        <textarea
+          value={mood}
+          onChange={(e) => setMood(e.target.value)}
+          placeholder="e.g., 'A rainy day, feeling nostalgic and calm'"
+          rows="3"
+        />
+        <button onClick={getPlaylist} disabled={isLoading}>
+          {isLoading ? 'Generating...' : 'Generate Playlist'}
+        </button>
 
-      {error && <div style={{ color: 'red', marginTop: '1rem' }}>Error: {error}</div>}
+        {error && <div className="error">Error: {error}</div>}
 
-      {playlist && (
-        <div style={{ marginTop: '2rem' }}>
-          <h2>Generated Playlist</h2>
-          <pre>{JSON.stringify(playlist, null, 2)}</pre>
-        </div>
-      )}
+        {isLoading && <div className="loading">Creating your playlist...</div>}
+
+        {playlist && (
+          <div className="playlist">
+            <h2>Your Playlist</h2>
+            <div className="track-list">
+              {playlist.map((track) => (
+                <a key={track.id} href={track.spotifyUrl} target="_blank" rel="noopener noreferrer" className="track">
+                  <img src={track.albumArt} alt={`Album art for ${track.title}`} />
+                  <div className="track-info">
+                    <div className="track-title">{track.title}</div>
+                    <div className="track-artist">{track.artist}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
